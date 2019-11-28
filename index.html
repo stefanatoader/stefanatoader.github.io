@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Palace of Culture Guide</title>
+    <!--    <link rel="stylesheet" href="raport.css">-->
+    <!--    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-coy.css">-->
+    <script src="node_modules/prismjs/prism.js" defer></script>
+    <style>
+        @import url('./node_modules/normalize.css/normalize.css');
+        @import url('./fonts/libre-baskerville-regular.css');
+        @import url('./fonts/libre-baskerville-bold.css');
+        @import url('./fonts/libre-baskerville-italic.css');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgba(143, 123, 141, 0.20);
+            color: #434343;
+        }
+
+        header {
+            border-top: 8px solid rgba(69, 34, 65, 1);
+            border-bottom: 2px solid rgba(143, 123, 141, 1);
+            box-shadow: 2px 0 4px rgba(143, 123, 141, 1);
+            margin-bottom: 64px;
+            background: #fff;
+        }
+
+        header p.title,
+        header p.subtitle {
+            max-width: 900px;
+            padding: 0 10px;
+            font-variant: small-caps;
+            margin: 0 auto;
+        }
+
+        header p.title {
+            font-size: 32px;
+            margin-top: 16px;
+        }
+
+        header p.subtitle {
+            margin-bottom: 8px;
+        }
+
+        body>section,
+        article {
+            padding: 0 10px;
+            margin: 0 auto 120px auto;
+            max-width: 900px;
+        }
+
+        section:target h2,
+        section:target h3,
+        article:target h1 {
+            color: #2196f3;
+        }
+
+        article {
+            /* the padding is 116px 116px 80px 116px, from which we remove the border */
+            padding: 88px 88px 72px 108px;
+            background: #fff;
+            border-top: 28px solid transparent;
+            border-right: 28px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 4px solid transparent;
+            border-image: url('card-bg.png') 28 28 8 4 repeat;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 24px;
+            -moz-hyphens: auto;
+            hyphens: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-variant: small-caps;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        h1 {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            letter-spacing: .75px;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        h2 {
+            padding-top: 16px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            letter-spacing: .75px;
+            font-size: 20px;
+        }
+
+        h3 {
+            padding-top: 16px;
+            padding-bottom: 0;
+            letter-spacing: .5px;
+            font-size: 16px;
+        }
+
+        dfn {
+            text-decoration: underline;
+        }
+
+        a {
+            color: #2196f3;
+        }
+
+        a,
+        :link,
+        :visited {
+            text-decoration: none;
+            color: #2196f3;
+        }
+
+        a:active {
+            color: #64b5f6;
+        }
+
+        article img {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        pre,
+        code,
+        a[property="schema:citation"] {
+            -moz-hyphens: none;
+            hyphens: none;
+        }
+
+        code:not([class]) {
+            color: #2196f3;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.3em;
+            padding: 0.2em;
+            background: #FDFDFD;
+        }
+
+        article pre[class*="language-"] {
+            max-height: 100%;
+        }
+
+        footer {
+            font-size: 10px;
+            box-shadow: -1px 0px 2px #BCBCBC;
+            background: #BDD5E9;
+            /*border-top: 2px solid #F9EABD;*/
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            max-width: 900px;
+            padding: 14px 10px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        footer a:link,
+        footer a:visited {
+            color: white;
+        }
+
+        footer img {
+            vertical-align: -4px;
+            background: white;
+            border-radius: 3px;
+            padding: 1px;
+            box-sizing: content-box;
+        }
+
+        section {
+            margin-top: 90px;
+        }
+
+        section[typeof='sa:ReferenceList'] dt {
+            float: left;
+            margin-right: 5px;
+        }
+
+        section[typeof='sa:ReferenceList'] dt::after {
+            content: ',';
+        }
+
+        section[typeof='sa:ReferenceList'] dd {
+            margin-bottom: 16px;
+        }
+
+        section[typeof='sa:ReferenceList'] cite::before {
+            content: '«';
+        }
+
+        section[typeof='sa:ReferenceList'] cite::after {
+            content: '»';
+        }
+
+        figure[typeof~="schema:Table"] {
+            overflow-x: scroll;
+        }
+
+        table {
+            width: 100%;
+            font: sans-serif;
+            letter-spacing: .25px;
+            border-collapse: collapse;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        table th {
+            padding: 8px 16px 8px 16px;
+            white-space: nowrap;
+            border-bottom: 0px;
+            border-top: 0px;
+            letter-spacing: .5px;
+            line-height: 15px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 12px;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            line-height: 18px;
+            vertical-align: top;
+            font-weight: 300;
+        }
+
+        table tbody tr:hover {
+            background-color: #F5F5F5;
+        }
+
+        caption {
+            font-family: "Libre Baskerville", Times, serif;
+            text-align: left;
+            padding: 16px;
+            margin-top: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            caption-side: bottom;
+            font-style: italic;
+            /* we're removing the border (28+4=32) + horizontal padding (88+108=196px) = 228px */
+            max-width: calc(100vw - 228px)
+        }
+
+        figure {
+            text-align: center;
+            box-sizing: border-box;
+            margin: 24px 0px;
+            padding-top: 32px;
+        }
+
+        figcaption {
+            text-align: left;
+            font: normal normal 300 13px/18px;
+            color: #9E9E9E;
+            margin: 24px 0px 32px 0px;
+            padding: 0 0px 24px 0;
+            letter-spacing: .35px;
+            border-bottom: 1px solid #eee;
+            font-style: italic;
+            hyphens: auto;
+        }
+
+        figure[typeof="sa:Image"] {
+            border-top: 1px solid #eee;
+        }
+
+        /*
+  The first section is always the users
+*/
+        article>section:first-of-type {
+            margin-top: 30px;
+        }
+
+        /* the authors' list */
+        article>section:first-of-type ol::before {
+            display: block;
+            float: left;
+            width: 150px;
+            margin-left: -150px;
+            font-variant: small-caps;
+            color: #9E9E9E;
+        }
+
+        article>section:first-of-type ol:first-of-type::before {
+            content: 'Authors';
+        }
+
+        article>section:first-of-type ol:not(:first-of-type)::before {
+            content: 'Affiliations';
+        }
+
+        article>section:first-of-type ol {
+            list-style-type: none;
+            margin-left: 150px;
+            counter-reset: affiliations;
+        }
+
+        article>section:first-of-type ol:not(:first-of-type) li::before {
+            counter-increment: affiliations;
+            content: counter(affiliations, lower-latin) '.';
+            font-size: 12px;
+            display: inline;
+        }
+
+        article>section:first-of-type li {
+            display: inline;
+        }
+
+        article>section:first-of-type li::after {
+            content: ',';
+        }
+
+        article>section:first-of-type li:last-child::after {
+            content: normal;
+        }
+
+        article>section:first-of-type a[property="sa:roleAffiliation"] {
+            font-size: 12px;
+            vertical-align: super;
+        }
+
+        /* have less vertical space in structured abstracts */
+        section[typeof='sa:Abstract']>section {
+            margin: 0;
+        }
+
+        section[typeof='sa:Abstract']>section>h3 {
+            display: inline;
+            font-variant: small-caps;
+            float: left;
+            font-size: inherit;
+            line-height: inherit;
+            margin: 0;
+            padding: 16px 8px 0 0;
+            color: #9E9E9E
+        }
+
+        aside[typeof="schema:WPSideBar"] {
+            font-style: italic;
+            background: #F0F6FA;
+        }
+
+        /* this is for a bug in PrismJS 1.3.0 that renders code as pre */
+        :not(pre)>code[class*='language-'] {
+            white-space: normal;
+        }
+
+        /* wide screen */
+        @media screen and (min-width: 1900px) {
+            article {
+                max-width: 1200px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+
+            header p.title,
+            header p.subtitle,
+            footer p {
+                max-width: 1200px;
+            }
+
+            footer {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 979px) {
+            article {
+                width: 100%;
+                padding: 115px 116px 79px 116px;
+                border-top: 1px solid #E0E0E0;
+                border-bottom: 1px solid #E0E0E0;
+                border-left: none;
+                border-right: none;
+            }
+
+            caption {
+                /* we're removing the horizontal padding (116px*2 = 232px) */
+                max-width: calc(100vw - 232px)
+            }
+        }
+
+        @media screen and (max-width: 799px) {
+            article {
+                padding: 57px 58px 39px 58px;
+            }
+
+            caption {
+                /* we're removing the horizontal padding (58px*2 = 116px) */
+                max-width: calc(100vw - 116px)
+            }
+        }
+
+        @media screen and (max-width: 399px) {
+            article {
+                padding: 28px 29px 19px 29px;
+            }
+
+            caption {
+                /* we're removing the horizontal padding (29px*2 = 58px) */
+                max-width: calc(100vw - 58px)
+            }
+
+            footer {
+                font-size: 10px;
+            }
+
+            article>section:first-of-type ol::before {
+                float: none;
+                width: auto;
+                margin-left: 0;
+            }
+
+            article>section:first-of-type ol {
+                margin-left: 0;
+                padding: 0;
+            }
+
+            section[typeof="sa:Abstract"] {
+                margin-top: 30px;
+            }
+        }
+
+        @media print {
+            header {
+                display: none;
+            }
+
+            footer {
+                background: #fff;
+                border: none;
+                color: #434343;
+            }
+
+            body {
+                margin: 0;
+                background: #fff;
+            }
+
+            article {
+                width: 100%;
+                border: none;
+                padding: 2em;
+            }
+
+            footer a:link,
+            footer a:visited,
+            a:link,
+            a:visited {
+                color: inherit;
+            }
+
+            pre {
+                background: transparent;
+            }
+
+            figure {
+                background: transparent;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <p class="title">Palace of Culture Guide</p>
+    </header>
+    <article id="echipa" typeof="schema:ScholarlyArticle" resource="#">
+        <h1>Authors</h1>
+        <section>
+            <ol>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/hiezust" typeof="schema:Person">
+                        <span property="schema:familyName">STUMBEA</span>
+                        <span property="schema:givenName"> ILINCA-MAGDALENA</span>
+                    </a>
+                </li>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/hiezust" typeof="schema:Person">
+                        <span property="schema:familyName">TOADER</span>
+                        <span property="schema:givenName">ŞTEFANA TEODORA</span>
+                    </a>
+                </li>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/hiezust" typeof="schema:Person">
+                        <span property="schema:familyName">DĂNILĂ</span>
+                        <span property="schema:givenName">CRISTIAN</span>
+                    </a>
+                </li>
+            </ol>
+            <ol>
+                <li id="fii">
+                    <a href="https://www.info.uaic.ro/bin/Main/" typeof="schema:Corporation">
+                        <span property="schema:name">Facultatea de Informatică Iaşi</span>
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <section id="intro">
+            <h1>Technical Report</h1>
+            <p>
+                This report presents the implementation details of the MUG application. MUG is a web-based application that guides a museum visitor among the exhibits, providing a map of the museum. The user experience is enriched by accessing the details about exponents with the help of QR codes.
+            </p>
+        </section>
+        <section id="scop">
+            <h1>Preliminary considerations about the internal data structures/models to be used</h1>
+            <p>
+                <h2><b>Scenario: MockGps registration and subsequent packet receival.</b></h2> <br>
+                The api will send a packet to the mock gps service with the following structure: <br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“user_token”: “23fgd343fdsfds3ssasda”, <br>
+                    &nbsp;&nbsp;&nbsp;“target_museum”: “Antipa Museum” <br>
+                    &nbsp;&nbsp;&nbsp;“strategy”: “path” <br>
+
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>user_token</b> is the authentication token for the current user. We use this data to differentiate different users authenticated in the system</li>
+                    <li><b>target_museum</b> is the name of the museum. The mock gps will have saved coordinates for a list of already existing museums. The user has to specify the targeted museum before the service will generate coordinates</li>
+                    <li><b>strategy</b> the coordinates can be generate randomly or in a direction</li>
+                </ul>
+                The mock gps service will send sequential packets with the following form:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“longitude”: 45.2, <br>
+                    &nbsp;&nbsp;&nbsp;“latitude”: 34.2, <br>
+                    &nbsp;&nbsp;&nbsp;“direction”: “LEFT” <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>longitude</b>- geographical longitude</li>
+                    <li><b>latitude</b>- geographical latitude</li>
+                    <li><b>direction</b>- the coordinates generated by the service if using any strategy are in a direction. The value of this field is compared to the previous pack. So if this pack is going left related to the previous one, the direction is left</li>
+                </ul>
+                <h2><b>Scenario: Museum Exponates Service, query, review and rating</b></h2> <br>
+                <figure typeof="sa:Image">
+                    <img src="1.png" width="880" height="655">
+                </figure>
+                <b>1.Querying an exponate </b> <br>
+                When at a particular position in the tour, in order to render the right UI graphics, the part of the app running on the user’s device will query the app for the which exponates are available at those coordinates. The input for the query action looks like this:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“action”: “query_exponate” <br>
+                    &nbsp;&nbsp;&nbsp;“selected_museum”: “antipamuseum” <br>
+                    &nbsp;&nbsp;&nbsp;“longitude”: 45.5, <br>
+                    &nbsp;&nbsp;&nbsp;“latitude”: 46.3, <br>
+                    &nbsp;&nbsp;&nbsp;“user_token”: “3234jhgg234j2h34gj23” <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>action</b>- this field is present in the packets that come from the end client in order to make distinction of the action the end user wants to do and to know how to properly dispatch the request</li>
+                    <li><b>selected_museum</b>- The museum in which the user is currently in</li>
+                    <li><b>longitude</b>- geographical coordinate</li>
+                    <li><b>latitude</b>- geographical coordinate</li>
+                    <li><b>user_token</b>- the token generated when the user logged in</li>
+                </ul>
+                The produced output will have the following form:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“exponate_id”: “34” <br>
+                    &nbsp;&nbsp;&nbsp;“exponate_name”: “mamut siberian” <br>
+                    &nbsp;&nbsp;&nbsp;“graphics”: “path/to/exponate/graphics”, <br>
+                    &nbsp;&nbsp;&nbsp;“data”: “information about exponate” <br>
+                    &nbsp;&nbsp;&nbsp;“rating”: 5 <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>exponate_id</b>- the id we currently use to identify this exponate</li>
+                    <li><b>exponate_name</b>- the name of the exponate</li>
+                    <li><b>graphics</b>- pictures or any media used to graphically expose the exponate in the user’s UI</li>
+                    <li><b>data</b>- information about an exponate, can be retrieved from the database or using the knowledge service</li>
+                    <li><b>rating</b>- the average of the ratings the users gave to this exponate</li>
+                </ul><br><br>
+                <b>2. Load reviews</b><br>
+                The user sends this pack to load the ratings for an exponate:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“action”: “load_comments”, <br>
+                    &nbsp;&nbsp;&nbsp;“user_token”: “32423hjg42j3h4gj2h3g423”, <br>
+                    &nbsp;&nbsp;&nbsp;“exponate_index”: 34 <br>
+                    &nbsp;&nbsp;&nbsp;“current_comment_index”: 0 <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>exponate_index</b>- the id we currently use to identify this exponate</li>
+                    <li><b>current_comment_index</b>- the server will respond with multiple packets because the there be a lot of comments and loading all at once is just not that efficient. So sending the last comment index is the right way to do this action</li>
+                </ul>
+                The packets sent from the server will have the following structure:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“comments”: [ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“author”: “author_name”,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“text”: “The siberian mamut is unique in Romania”,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“rating”: 3.5<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;&nbsp;]<br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>comments</b> contains a list of json pack which have the following structure: author, the actual comment, number of stars for this comment</li>
+                </ul><br><br>
+                <b>3. Write review</b><br>
+                To write a review to an exponate, the end user will send a packet with the following structure:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“user_token”: “433hjg3jh45345ghj34g534hj53gj45”, <br>
+                    &nbsp;&nbsp;&nbsp;“review”: “....”, <br>
+                    &nbsp;&nbsp;&nbsp;“exponate_id”: 34 <br>
+                    }<br>
+                </b>
+                And the server will respond with one of the standard http statuses if the review was created or not or something else.<br><br>
+                <b>4. Rate an exponate</b><br>
+                The user will send the following packet in order to rate an exponate:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“user_token”: “fgdf342fd4dgdfgd32423dgdfgdf”, <br>
+                    &nbsp;&nbsp;&nbsp;“rating”: 5, <br>
+                    &nbsp;&nbsp;&nbsp;“exponate_id”: 34 <br>
+                    }<br>
+                </b>
+                The server will respond with one of standard http statuses if the rating was added or not or something else.<br>
+                <h2>Scenario: Knowledge service, retrieving information about an exponate</h2>
+                <figure typeof="sa:Image">
+                    <img src="2.png" width="880" height="655">
+                </figure><br>
+                The data about an exponate can be cached locally in the database we keep for all the exponates or, in the majority of cases, it is looked up on the internet. If it is not found in the database by the museum exponates service, it will provided by the knowledge service. The packet the api send to the knowledge service has the following structure:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“exponate_name”: “mamut siberian”, <br>
+                    &nbsp;&nbsp;&nbsp;“aggregated_info”: “Mamutul siberian….” <br>
+                    }<br>
+                </b>
+                The API will redirect the obtained data to the museum exponates service and then it will rendered back to the user.<br>
+                <h2>Scenario: Registration/Authentication service, registering and authenticating users</h2><br>
+                <b>1. Authenticating an user</b><br>
+                When the user authenticates it will send a packet with:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“username”: “foo”, <br>
+                    &nbsp;&nbsp;&nbsp;“password”: “56sdfgjds5sdf”, <br>
+                    &nbsp;&nbsp;&nbsp;“ip”: “89.98.23.23” <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>password</b> - the hashed version for the actual password the user entered
+                    <li>
+                </ul>
+                If the credentials the user provided are correct, the server will return the following packet:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“status”: “success” <br>
+                    &nbsp;&nbsp;&nbsp;“auth_token”: “343gh32jg4h23g4234jh234” <br>
+                    }<br>
+                </b>
+                And the token will be locally saved in a cookie on the user’s browser.<br><br>
+                <b>2. Registering an user</b><br>
+                When an user wants to register in the app, he will send a packet with the following structure to the API:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“username”: “foo”, <br>
+                    &nbsp;&nbsp;&nbsp;“password”: “sha256bar”, <br>
+                    &nbsp;&nbsp;&nbsp;“email_address”: “foo@bar.com” <br>
+                    }<br>
+                </b>
+                If the user is available the API will respond with the following packet:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“status”: “success” <br>
+                    }<br>
+                </b>
+                The <b>status</b> field will contain the error message if any is needed.<br>
+            </p>
+        </section>
+        <section typeof="sa:Abstract" id="scop">
+            <h1>Considerations about the external data sources</h1>
+            <p>
+                <figure typeof="sa:Image">
+                    <img src="3.jpg" width="880" height="655">
+                </figure><br>
+            </p>
+            <h2>Description of the diagram elements</h2>
+            <p>
+                <b>1. Mock gps service</b><br>
+                <figure typeof="sa:Image">
+                    <img src="4.jpg" width="880" height="655">
+                </figure><br>
+                Normally, the device running the app should send information regarding the longitude and latitude to the API. Because we want to emulate. Because it is easier to test using mock data we replaced this with a service that generates this data. On the service we will implement a functionality to manually add the login token of the current user. The API will ask for user position at every 0.5 seconds, instead of asking the phone gps it will ask the mock service. This means that also the graphics that the user is seeing locally will also be updated based on the mock data generated by this service.<br><br>
+                <b>2. Registration and authentication service</b><br>
+                Initially, the user will be asked for email, real name and a password to be kept inside the database. Based on the email and password he will be authenticated later. When an user is successfully authenticated a token is generated, this token is used by the rest of the services.<br><br>
+                <b>3. Knowledge base service</b><br>
+                Whenever an user is near an exponate, the knowledge base service will be queried for information about that thing. This service agregates results obtained from multiple sources like <b>wikidata</b>.<br><br>
+                <b>4.Exponates service</b><br>
+                All the exponates ever visited on the museum will be saved in a database. This way we can store comments and other user
+                related information about that item. When adding a comment, this service <b>will be queried</b>.<br><bR>
+                <b>5. SPARQL endpoint</b><br>
+                After adding info about an exponate this data will be transferred to the SPARQL endpoint. This service just exposes the data to an SPARQL endpoint.<br><br>
+                <b>6. API</b><br>
+                This is the main component connecting all the services. First has the role of dispatching the UI to the users. The it dispatches the users request to the appropiate service from the ones described above and processes the about so it can be delivered back to the user.
+            </p>
+
+        </section>
+    </article>
+    <footer>
+        <p>
+            <a href="?">WADe 2019</a>
+        </p>
+    </footer>
+</body>
+
+</html>
